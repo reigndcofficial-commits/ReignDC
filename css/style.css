@@ -1608,11 +1608,6 @@ select {
   }
 }
 
-/* ================================
-   DISCORD PAGE - REIGNDC
-   Add this at the end of style.css
-================================ */
-
 .discord-page {
   --discord-bg: #0f1117;
   --discord-surface: #161a22;
@@ -1844,4 +1839,6 @@ select {
   .discord-page .discord-btn {
     width: 100%;
   }
+}
+
 }
