@@ -1607,3 +1607,241 @@ select {
     grid-template-columns: 1fr;
   }
 }
+
+/* ================================
+   DISCORD PAGE - REIGNDC
+   Add this at the end of style.css
+================================ */
+
+.discord-page {
+  --discord-bg: #0f1117;
+  --discord-surface: #161a22;
+  --discord-surface-soft: #1c212c;
+  --discord-border: rgba(255, 255, 255, 0.08);
+  --discord-text: #f5f7fb;
+  --discord-text-muted: #aeb6c7;
+  --discord-primary: #5865f2;
+  --discord-primary-hover: #4752c4;
+  --discord-white: #ffffff;
+  --discord-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  --discord-radius: 18px;
+  background:
+    radial-gradient(circle at top, rgba(88, 101, 242, 0.16), transparent 30%),
+    var(--discord-bg);
+  color: var(--discord-text);
+  min-height: 100vh;
+}
+
+.discord-page .skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+}
+
+.discord-page .skip-link:focus {
+  left: 16px;
+  top: 16px;
+  background: var(--discord-white);
+  color: #000000;
+  padding: 10px 14px;
+  border-radius: 8px;
+  z-index: 1000;
+}
+
+.discord-page .site-header {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--discord-border);
+  background: rgba(15, 17, 23, 0.75);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.discord-page .nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.discord-page .brand {
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--discord-white);
+  text-decoration: none;
+}
+
+.discord-page .nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.discord-page .nav a {
+  color: var(--discord-text-muted);
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.discord-page .nav a:hover {
+  color: var(--discord-white);
+}
+
+.discord-page .discord-hero-section {
+  min-height: calc(100vh - 81px);
+  display: grid;
+  place-items: center;
+  padding: 64px 0;
+}
+
+.discord-page .discord-hero-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.02));
+  border: 1px solid var(--discord-border);
+  border-radius: var(--discord-radius);
+  padding: 48px;
+  box-shadow: var(--discord-shadow);
+}
+
+.discord-page .discord-eyebrow {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(88, 101, 242, 0.14);
+  color: #c8ceff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.discord-page h1 {
+  margin: 0;
+  max-width: 12ch;
+  font-size: clamp(2.3rem, 5vw, 4.6rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: var(--discord-white);
+}
+
+.discord-page .discord-hero-text {
+  margin: 20px 0 0;
+  max-width: 62ch;
+  color: var(--discord-text-muted);
+  font-size: 1.05rem;
+}
+
+.discord-page .discord-button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.discord-page .discord-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 20px;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.discord-page .discord-btn:hover {
+  transform: translateY(-1px);
+}
+
+.discord-page .discord-btn-primary {
+  background: var(--discord-primary);
+  color: var(--discord-white);
+}
+
+.discord-page .discord-btn-primary:hover {
+  background: var(--discord-primary-hover);
+}
+
+.discord-page .discord-btn-secondary {
+  border: 1px solid var(--discord-border);
+  background: var(--discord-surface-soft);
+  color: var(--discord-white);
+}
+
+.discord-page .discord-btn-secondary:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.discord-page .discord-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 40px;
+}
+
+.discord-page .discord-info-box {
+  background: var(--discord-surface);
+  border: 1px solid var(--discord-border);
+  border-radius: 16px;
+  padding: 22px;
+}
+
+.discord-page .discord-info-box h2 {
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+  color: var(--discord-white);
+}
+
+.discord-page .discord-info-box p {
+  margin: 0;
+  color: var(--discord-text-muted);
+  font-size: 0.98rem;
+}
+
+@media (max-width: 900px) {
+  .discord-page .discord-hero-card {
+    padding: 32px 24px;
+  }
+
+  .discord-page .discord-info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .discord-page .nav-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .discord-page .nav {
+    gap: 14px;
+  }
+
+  .discord-page .discord-hero-section {
+    min-height: auto;
+    padding: 40px 0 56px;
+  }
+
+  .discord-page h1 {
+    max-width: 100%;
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .discord-page .discord-hero-text {
+    font-size: 1rem;
+  }
+
+  .discord-page .discord-button-group {
+    flex-direction: column;
+  }
+
+  .discord-page .discord-btn {
+    width: 100%;
+  }
+}
