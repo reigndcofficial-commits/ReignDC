@@ -351,14 +351,19 @@ select {
     0 0 24px rgba(88, 230, 255, 0.55);
 }
 
+.node-germany {
+  left: 38%;
+  top: 26%;
+}
+
 .node-mumbai {
-  left: 30%;
-  top: 46%;
+  left: 46%;
+  top: 49%;
 }
 
 .node-singapore {
-  left: 58%;
-  top: 54%;
+  left: 68%;
+  top: 61%;
 }
 
 .pulse {
@@ -396,13 +401,38 @@ select {
 
 .network-line {
   position: absolute;
-  left: 31%;
-  top: 47%;
-  width: 28%;
   height: 2px;
-  background: linear-gradient(90deg, rgba(88, 230, 255, 0.2), rgba(88, 230, 255, 0.9), rgba(88, 230, 255, 0.2));
-  transform: rotate(13deg);
-  box-shadow: 0 0 24px rgba(88, 230, 255, 0.5);
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    rgba(88, 230, 255, 0.12),
+    rgba(88, 230, 255, 0.95),
+    rgba(88, 230, 255, 0.12)
+  );
+  box-shadow: 0 0 24px rgba(88, 230, 255, 0.32);
+  transform-origin: left center;
+}
+
+.network-line-germany-mumbai {
+  left: 39.5%;
+  top: 28.5%;
+  width: 24%;
+  transform: rotate(66deg);
+}
+
+.network-line-mumbai-singapore {
+  left: 47.5%;
+  top: 50.5%;
+  width: 24%;
+  transform: rotate(21deg);
+}
+
+.network-line-germany-singapore {
+  left: 40%;
+  top: 28.5%;
+  width: 43%;
+  transform: rotate(45deg);
+  opacity: 0.55;
 }
 
 .floating-stat,
@@ -718,6 +748,14 @@ select {
   animation: defenseSpinReverse 24s linear infinite;
 }
 
+.defense-ring-3 {
+  width: 410px;
+  height: 410px;
+  border-style: dotted;
+  border-color: rgba(88, 230, 255, 0.14);
+  animation: defensePulseRing 6.4s ease-in-out infinite;
+}
+
 .defense-core {
   width: 120px;
   height: 120px;
@@ -755,60 +793,69 @@ select {
 }
 
 .defense-dot.blocked {
-  left: -10%;
   background: radial-gradient(circle, #ffffff 0%, var(--cyan) 45%, rgba(88, 230, 255, 0.08) 100%);
   box-shadow:
     0 0 10px rgba(88, 230, 255, 0.55),
     0 0 22px rgba(88, 230, 255, 0.24);
-  animation: defenseBlocked 3.8s linear infinite;
+  animation-duration: 4.8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
 .defense-dot.breach {
-  left: -10%;
   width: 8px;
   height: 8px;
   background: radial-gradient(circle, #ffffff 0%, var(--danger) 40%, rgba(255, 107, 139, 0.1) 100%);
   box-shadow:
     0 0 10px rgba(255, 107, 139, 0.5),
     0 0 22px rgba(255, 107, 139, 0.2);
-  animation: defenseBreach 4.2s linear infinite;
+  animation: breachIn 5.6s linear infinite;
 }
 
-/* Matches your HTML classes: d1-d8, b1-b4, i1-i8 */
-.d1 { top: 14%; animation-delay: 0s; }
-.d2 { top: 24%; animation-delay: 0.45s; }
-.d3 { top: 34%; animation-delay: 0.9s; }
-.d4 { top: 46%; animation-delay: 1.35s; }
-.d5 { top: 56%; animation-delay: 1.8s; }
-.d6 { top: 66%; animation-delay: 2.25s; }
-.d7 { top: 76%; animation-delay: 2.7s; }
-.d8 { top: 84%; animation-delay: 3.15s; }
+.d1  { left: 12%; top: 18%; animation-name: blockedInA; animation-delay: 0.15s; }
+.d2  { left: 24%; top: 8%; animation-name: blockedInC; animation-delay: 1.10s; }
+.d3  { left: 52%; top: 6%; animation-name: blockedInTop; animation-delay: 0.65s; }
+.d4  { left: 80%; top: 15%; animation-name: blockedInD; animation-delay: 1.95s; }
+.d5  { left: 90%; top: 36%; animation-name: blockedInRight; animation-delay: 0.35s; }
+.d6  { left: 88%; top: 68%; animation-name: blockedInD; animation-delay: 2.20s; }
+.d7  { left: 69%; top: 86%; animation-name: blockedInBottom; animation-delay: 1.45s; }
+.d8  { left: 42%; top: 90%; animation-name: blockedInBottom; animation-delay: 2.95s; }
+.d9  { left: 16%; top: 84%; animation-name: blockedInB; animation-delay: 0.90s; }
+.d10 { left: 6%; top: 60%; animation-name: blockedInLeft; animation-delay: 2.55s; }
+.d11 { left: 8%; top: 38%; animation-name: blockedInLeft; animation-delay: 1.70s; }
+.d12 { left: 30%; top: 78%; animation-name: blockedInB; animation-delay: 3.25s; }
 
-.b1 { top: 20%; animation-delay: 0.4s; }
-.b2 { top: 40%; animation-delay: 1.4s; }
-.b3 { top: 60%; animation-delay: 2.4s; }
-.b4 { top: 78%; animation-delay: 3.1s; }
+.b1 { left: 18%; top: 12%; animation-delay: 0.80s; }
+.b2 { left: 84%; top: 24%; animation-delay: 2.40s; }
+.b3 { left: 78%; top: 82%; animation-delay: 1.65s; }
+.b4 { left: 10%; top: 74%; animation-delay: 3.10s; }
+.b5 { left: 58%; top: 10%; animation-delay: 2.95s; }
+.b6 { left: 90%; top: 52%; animation-delay: 0.40s; }
 
 .defense-impact {
   width: 18px;
   height: 18px;
-  border: 1px solid rgba(88, 230, 255, 0.45);
+  border: 1px solid rgba(88, 230, 255, 0.42);
   box-shadow:
-    0 0 18px rgba(88, 230, 255, 0.3),
-    inset 0 0 16px rgba(88, 230, 255, 0.18);
+    0 0 18px rgba(88, 230, 255, 0.28),
+    inset 0 0 16px rgba(88, 230, 255, 0.16);
   opacity: 0;
-  transform: scale(0.2);
-  animation: defenseFlash 3.8s ease-out infinite;
+  transform: translate(-50%, -50%) scale(0.25);
+  animation: defenseFlashRing 4.8s ease-out infinite;
 }
 
-.i1 { left: 34%; top: 16%; animation-delay: 0.05s; }
-.i2 { left: 37%; top: 25%; animation-delay: 0.5s; }
-.i3 { left: 39%; top: 36%; animation-delay: 0.95s; }
-.i4 { left: 41%; top: 48%; animation-delay: 1.4s; }
-.i5 { left: 43%; top: 58%; animation-delay: 1.85s; }
-.i6 { left: 41%; top: 67%; animation-delay: 2.3s; }
-.i7 { left: 39%; top: 76%; animation-delay: 2.75s; }
-.i8 { left: 36%; top: 84%; animation-delay: 3.2s; }
+.i1  { left: 30%; top: 24%; animation-delay: 0.20s; }
+.i2  { left: 43%; top: 18%; animation-delay: 1.00s; }
+.i3  { left: 58%; top: 23%; animation-delay: 1.85s; }
+.i4  { left: 67%; top: 36%; animation-delay: 0.75s; }
+.i5  { left: 70%; top: 54%; animation-delay: 2.35s; }
+.i6  { left: 60%; top: 69%; animation-delay: 1.40s; }
+.i7  { left: 45%; top: 74%; animation-delay: 2.95s; }
+.i8  { left: 28%; top: 66%; animation-delay: 0.55s; }
+.i9  { left: 23%; top: 48%; animation-delay: 2.10s; }
+.i10 { left: 34%; top: 38%; animation-delay: 3.30s; }
+.i11 { left: 52%; top: 50%; animation-delay: 1.60s; }
+.i12 { left: 40%; top: 59%; animation-delay: 2.65s; }
 
 /* Plans */
 .plan-card.featured {
@@ -992,27 +1039,87 @@ select {
   100% { transform: translateY(100%); }
 }
 
-@keyframes defenseBlocked {
-  0% { transform: translateX(0) scale(0.5); opacity: 0; }
+@keyframes blockedInA {
+  0% { transform: translate(0, 0) scale(0.3); opacity: 0; }
   10% { opacity: 1; }
-  58% { transform: translateX(220px) scale(1); opacity: 1; }
-  72% { transform: translateX(242px) scale(1.6); opacity: 0.35; }
-  100% { transform: translateX(260px) scale(0.2); opacity: 0; }
+  70% { transform: translate(120px, 85px) scale(1); opacity: 1; }
+  100% { transform: translate(145px, 102px) scale(0.2); opacity: 0; }
 }
 
-@keyframes defenseBreach {
-  0% { transform: translateX(0) scale(0.5); opacity: 0; }
-  10% { opacity: 1; }
-  58% { transform: translateX(220px) scale(1); opacity: 1; }
-  78% { transform: translateX(305px) scale(0.9); opacity: 1; }
-  100% { transform: translateX(340px) scale(0.2); opacity: 0; }
+@keyframes blockedInB {
+  0% { transform: translate(0, 0) scale(0.3); opacity: 0; }
+  12% { opacity: 1; }
+  72% { transform: translate(110px, -110px) scale(1); opacity: 1; }
+  100% { transform: translate(132px, -132px) scale(0.2); opacity: 0; }
 }
 
-@keyframes defenseFlash {
-  0%, 52% { opacity: 0; transform: scale(0.2); }
-  62% { opacity: 1; transform: scale(1.15); }
-  80% { opacity: 0.45; transform: scale(2); }
-  100% { opacity: 0; transform: scale(2.6); }
+@keyframes blockedInC {
+  0% { transform: translate(0, 0) scale(0.3); opacity: 0; }
+  12% { opacity: 1; }
+  72% { transform: translate(-95px, 120px) scale(1); opacity: 1; }
+  100% { transform: translate(-115px, 145px) scale(0.2); opacity: 0; }
+}
+
+@keyframes blockedInD {
+  0% { transform: translate(0, 0) scale(0.3); opacity: 0; }
+  12% { opacity: 1; }
+  72% { transform: translate(-115px, -105px) scale(1); opacity: 1; }
+  100% { transform: translate(-138px, -126px) scale(0.2); opacity: 0; }
+}
+
+@keyframes blockedInTop {
+  0% { transform: translate(0, 0) scale(0.3); opacity: 0; }
+  12% { opacity: 1; }
+  72% { transform: translate(0, 145px) scale(1); opacity: 1; }
+  100% { transform: translate(0, 170px) scale(0.2); opacity: 0; }
+}
+
+@keyframes blockedInBottom {
+  0% { transform: translate(0, 0) scale(0.3); opacity: 0; }
+  12% { opacity: 1; }
+  72% { transform: translate(0, -140px) scale(1); opacity: 1; }
+  100% { transform: translate(0, -165px) scale(0.2); opacity: 0; }
+}
+
+@keyframes blockedInLeft {
+  0% { transform: translate(0, 0) scale(0.3); opacity: 0; }
+  12% { opacity: 1; }
+  72% { transform: translate(150px, 0) scale(1); opacity: 1; }
+  100% { transform: translate(176px, 0) scale(0.2); opacity: 0; }
+}
+
+@keyframes blockedInRight {
+  0% { transform: translate(0, 0) scale(0.3); opacity: 0; }
+  12% { opacity: 1; }
+  72% { transform: translate(-145px, 0) scale(1); opacity: 1; }
+  100% { transform: translate(-170px, 0) scale(0.2); opacity: 0; }
+}
+
+@keyframes breachIn {
+  0% { transform: translate(0, 0) scale(0.35); opacity: 0; }
+  10% { opacity: 1; }
+  65% { transform: translate(-20px, 15px) scale(0.95); opacity: 1; }
+  82% { transform: translate(-42px, 28px) scale(0.92); opacity: 0.9; }
+  100% { transform: translate(-58px, 38px) scale(0.18); opacity: 0; }
+}
+
+@keyframes defenseFlashRing {
+  0%, 54% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.2);
+  }
+  63% {
+    opacity: 0.95;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  82% {
+    opacity: 0.24;
+    transform: translate(-50%, -50%) scale(2.15);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(2.8);
+  }
 }
 
 @keyframes defensePulse {
@@ -1028,6 +1135,17 @@ select {
 @keyframes defenseSpinReverse {
   from { transform: rotate(360deg); }
   to { transform: rotate(0deg); }
+}
+
+@keyframes defensePulseRing {
+  0%, 100% {
+    transform: scale(0.98);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 0.9;
+  }
 }
 
 /* Responsive */
@@ -1104,7 +1222,43 @@ select {
   }
 
   .network-card {
-    min-height: 440px;
+    min-height: 460px;
+  }
+
+  .node-germany {
+    left: 33%;
+    top: 20%;
+  }
+
+  .node-mumbai {
+    left: 44%;
+    top: 48%;
+  }
+
+  .node-singapore {
+    left: 68%;
+    top: 63%;
+  }
+
+  .network-line-germany-mumbai {
+    left: 34.8%;
+    top: 22.8%;
+    width: 31%;
+    transform: rotate(67deg);
+  }
+
+  .network-line-mumbai-singapore {
+    left: 45.8%;
+    top: 49.8%;
+    width: 26%;
+    transform: rotate(26deg);
+  }
+
+  .network-line-germany-singapore {
+    left: 35%;
+    top: 23%;
+    width: 48%;
+    transform: rotate(49deg);
   }
 
   .hero {
@@ -1144,13 +1298,61 @@ select {
   }
 
   .network-card {
-    min-height: 390px;
+    min-height: 410px;
+  }
+
+  .node::before {
+    width: 12px;
+    height: 12px;
+  }
+
+  .pulse {
+    width: 28px;
+    height: 28px;
+    left: -8px;
+    top: -8px;
+  }
+
+  .node-germany {
+    left: 28%;
+    top: 18%;
+  }
+
+  .node-mumbai {
+    left: 42%;
+    top: 48%;
+  }
+
+  .node-singapore {
+    left: 69%;
+    top: 66%;
   }
 
   .node-tag {
     min-width: 110px;
     left: 18px;
     padding: 8px 10px;
+  }
+
+  .network-line-germany-mumbai {
+    left: 29.8%;
+    top: 20.6%;
+    width: 36%;
+    transform: rotate(70deg);
+  }
+
+  .network-line-mumbai-singapore {
+    left: 43.6%;
+    top: 50.3%;
+    width: 28%;
+    transform: rotate(29deg);
+  }
+
+  .network-line-germany-singapore {
+    left: 30.5%;
+    top: 20.8%;
+    width: 52%;
+    transform: rotate(51deg);
   }
 
   .hero-meta,
@@ -1182,6 +1384,11 @@ select {
     height: 255px;
   }
 
+  .defense-ring-3 {
+    width: 310px;
+    height: 310px;
+  }
+
   .defense-core {
     width: 96px;
     height: 96px;
@@ -1191,6 +1398,14 @@ select {
   .defense-footer {
     bottom: 18px;
     font-size: 0.72rem;
+  }
+
+  .defense-dot.blocked {
+    animation-duration: 5.1s;
+  }
+
+  .defense-dot.breach {
+    animation-duration: 5.9s;
   }
 }
 
@@ -1608,6 +1823,11 @@ select {
   }
 }
 
+/* ================================
+   DISCORD PAGE - REIGNDC
+   Add this at the end of style.css
+================================ */
+
 .discord-page {
   --discord-bg: #0f1117;
   --discord-surface: #161a22;
@@ -1839,6 +2059,4 @@ select {
   .discord-page .discord-btn {
     width: 100%;
   }
-}
-
 }
